@@ -152,7 +152,7 @@ class EurekaTrackerApp:
         style.configure("TLabel", background=BG, foreground=FG)
         style.configure("TFrame", background=BG)
         style.configure("TLabelframe", background=BG, foreground=FG,
-                         bordercolor=BORDER)
+                         bordercolor=BORDER, lightcolor=BG, darkcolor=BORDER)
         style.configure("TLabelframe.Label", background=BG, foreground=FG)
         style.configure("TButton", background=BG_BUTTON, foreground=FG,
                          bordercolor=BORDER, padding=(8, 4))
@@ -162,7 +162,8 @@ class EurekaTrackerApp:
         style.configure("Status.TLabel", background=BG_WIDGET, foreground=FG,
                          bordercolor=BORDER, padding=(4, 2))
 
-        # Store colors for dynamic use (proc rate coloring)
+        # Store colors for dynamic use
+        self._bg = BG
         self._fg_default = FG
 
     def _build_gui(self):
@@ -171,7 +172,10 @@ class EurekaTrackerApp:
         root.configure(padx=12, pady=8)
 
         # --- Counters ---
-        counter_frame = ttk.LabelFrame(root, text="Counters", padding=10)
+        # Use tk.LabelFrame (not ttk) to get the label embedded in the border
+        counter_frame = tk.LabelFrame(root, text="Counters", padx=10, pady=10,
+                                      bg=self._bg, fg=self._fg_default,
+                                      bd=2, relief="groove")
         counter_frame.pack(fill="x", pady=(0, 8))
 
         labels = [
