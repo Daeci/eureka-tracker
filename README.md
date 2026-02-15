@@ -29,7 +29,7 @@ Grab the latest `EurekaMomentTracker.exe` from the [Releases](https://github.com
 
 ## Running from Source
 
-Requires Python 3.10+ and [websocket-client](https://pypi.org/project/websocket-client/).
+Requires Python 3.10+ and [websocket-client](https://pypi.org/project/websocket-client/). Also requires tkinter, which is included by default with the standard Python installer on Windows. On Linux, you may need to install it separately (e.g. `sudo apt install python3-tk`).
 
 ```bash
 pip install websocket-client
