@@ -1,6 +1,6 @@
 # Eureka Moment Tracker
 
-Track [Eureka Moment](https://ffxiv.consolegameswiki.com/wiki/Eureka_Moment) proc rates from **Solid Reason** (Miner) and **Ageless Words** (Botanist) in Final Fantasy XIV.
+Track Eureka Moment effect proc rates from **Solid Reason** (Miner) and **Ageless Words** (Botanist) in Final Fantasy XIV.
 
 Connects to [IINACT](https://github.com/marzent/IINACT)'s WebSocket for real-time game event data — counters update instantly as you gather.
 
